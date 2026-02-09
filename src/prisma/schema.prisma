@@ -1,0 +1,22 @@
+// src/prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Movie {
+  id             Int      @id @default(autoincrement())
+  title          String   @unique
+  description    String?
+  duration       Int
+  genre          String
+  rating         Decimal  @default(0.0)
+  available      Boolean  @default(true)
+  createdAt      DateTime @default(now())
+  ratingChanges  Int      @default(0)
+
+  @@map("movies")
+}
