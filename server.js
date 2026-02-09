@@ -1,6 +1,6 @@
 import express from 'express';
 import 'dotenv/config';
-import movieRoute from './routes/movieRoute.js';
+import movieRoute from './src/routes/movieRoute.js';
 
 const app = express();
 app.use(express.json());
